@@ -3,13 +3,13 @@ import './Products.scss'
 import Product from './Product/Product'
 
 
-export const Products = ({ innerPage }) => {
+export const Products = ({ innerPage, headingText = "" }) => {
   return (
     <div className='products-container'>
     {!innerPage
     &&
       <div className='sec-heading'>
-        Section Heading
+        {headingText}
       </div>
     }
       <div className='products'>
