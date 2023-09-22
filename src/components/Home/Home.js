@@ -3,8 +3,8 @@ import React from 'react'
 
 import './Home.scss'
 import Banner from './Banner/Banner.js'
-import Category from '../Category/Category'
 import { Products } from '../Products/Products'
+import Category from './Category/Category.js'
 
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
       <Banner />
       <div className='main-content'>
         <div className='layout'>
-          <Category />
+          <Category/>
           <Products />
         </div>
       </div>

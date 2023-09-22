@@ -1,24 +1,15 @@
-import React from 'react';
-import './Category.scss';
+import React from 'react'
+import './Category.scss'
+import Products from '../Products/Products'
 
-import cat1 from '../../assets/banner-img.png'
-
-function Category() {
+const Category = () => {
   return (
-    <div className='shop-by-category'>
-      <div className='categories'>
-        <div className='category'>
-          <img src={cat1} alt="cat1" />
+    <div className='category-main-content' >
+      <div className='layout'>
+        <div className='category-title'>
+          Category Titile
         </div>
-        <div className='category'>
-          <img src={cat1} alt="cat1" />
-        </div>
-        <div className='category'>
-          <img src={cat1} alt="cat1" />
-        </div>
-        <div className='category'>
-          <img src={cat1} alt="cat1" />
-        </div>
+        <Products innerPage = {true} />
       </div>
     </div>
   )
