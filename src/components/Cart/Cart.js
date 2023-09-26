@@ -12,9 +12,9 @@ const Cart = ({ handleShowCart }) => {
       <div className='cart-content'>
         <div className='cart-header'>
           <span className='heading'>Shopping Cart</span>
-          <span className='close-btn'>
+          <span className='close-btn' onClick={() => handleShowCart()} >
             <MdClose />
-            <span className='text' onClick={() => handleShowCart()} >Close</span>
+            <span className='text'>Close</span>
           </span>
         </div>
         {/* <div className='empty-cart'>
