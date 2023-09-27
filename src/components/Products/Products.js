@@ -3,7 +3,7 @@ import './Products.scss'
 import Product from './Product/Product'
 
 
-export const Products = ({ innerPage, headingText = "" }) => {
+export const Products = ({ innerPage, headingText = "", products }) => {
   return (
     <div className='products-container'>
     {!innerPage
@@ -13,14 +13,7 @@ export const Products = ({ innerPage, headingText = "" }) => {
       </div>
     }
       <div className='products'>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {products?.data?.map((item) => <Product item={item.attributes} key={item.id} id={item.id}/>)}
       </div>
     </div>
   )

@@ -1,18 +1,19 @@
 import React from 'react'
 import './Product.scss'
-import prod from '../../../assets/products/boat-airdope.png'
 
-const Product = () => {
+const URL = process.env.REACT_APP_DEV_URL;
+
+const Product = ({item}) => {
   return (
     <div className="product-card">
       <div className="thumbnail">
-        <img src={prod} alt="prod" />
+        <img src={`${URL}${item.img.data[0].attributes.url}`} alt="prod" />
       </div>
       <div className="prod-details">
         <span className="name">
-          Product name assets/ products/ boat-airdope
+          {item.text}
         </span>
-        <span className="price">&#8377;32</span>
+        <span className="price">&#8377;{item.price}</span>
       </div>
     </div>
   );

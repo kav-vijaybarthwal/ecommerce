@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useContext} from 'react'
+import { Context } from '../../utils/context'
 
 
 import './Home.scss'
@@ -9,12 +10,24 @@ import { fetchDataFromApi } from '../../utils/api'
 
 function Home() {
 
+  const { categories, setCategories, products, setproducts} = useContext(Context)
+
   useEffect(() => {
-    getCategories()
+    getCategories();
+    getProducts();
   }, []);
 
   const getCategories = () => {
-    fetchDataFromApi("/api/categories").then(res => console.log(res))
+    fetchDataFromApi("/api/categories?populate=*").then(res => {
+      console.log(res)
+      setCategories(res)
+    })
+  }
+  const getProducts = () => {
+    fetchDataFromApi("/api/products?populate=*").then(res => {
+      console.log(res)
+      setproducts(res)
+    })
   }
 
   return (
@@ -22,8 +35,11 @@ function Home() {
       <Banner />
       <div className='main-content'>
         <div className='layout'>
-          <Category/>
-          <Products headingText = "Popular Products"/>
+          <Category categories={categories} />
+          <Products
+            products={products}
+            headingText = "Popular Products"
+          />
         </div>
       </div>
     </div>
