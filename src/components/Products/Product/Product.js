@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Product.scss'
 
 const URL = process.env.REACT_APP_DEV_URL;
 
 const Product = ({item}) => {
+  const navigate = useNavigate();
   return (
     <div className="product-card">
       <div className="thumbnail">
