@@ -19,13 +19,11 @@ function Home() {
 
   const getCategories = () => {
     fetchDataFromApi("/api/categories?populate=*").then(res => {
-      console.log(res)
       setCategories(res)
     })
   }
   const getProducts = () => {
     fetchDataFromApi("/api/products?populate=*").then(res => {
-      console.log(res)
       setproducts(res)
     })
   }

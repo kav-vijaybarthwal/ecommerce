@@ -7,10 +7,12 @@ import SingleProduct from './components/SingleProduct/SingleProduct.js'
 import NewsLetter from './components/Footer/NewsLetter/NewsLetter.js'
 import AppContext from './utils/context.js'
 import Category from './components/Category/Category.js'
+import ScrollToTop from './components/ScrollToTop.js'
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
     <AppContext>
     <Header />
       <Routes>
